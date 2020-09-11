@@ -19,9 +19,9 @@ export PATH="$ZSH_DIR/bin:$PATH"
 # Download Oh My Zsh
 if [ ! -d $OH_MY_ZSH_DIR ]; then
   # If we're running in replit, set CHSH=no
-  [[ $REPL_SLUG ]] && export CHSH=no
-  ZSH=$OH_MY_ZSH_DIR KEEP_ZSHRC=no sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-  unset CHSH
+  # [[ $REPL_SLUG ]] && export CHSH=no
+  ZSH=$OH_MY_ZSH_DIR CHSH=no KEEP_ZSHRC=no sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+  # unset CHSH
 fi
 
 # Download powerlevel10k
