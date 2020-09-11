@@ -34,6 +34,9 @@ if [ ! -d $ZSH_AUTO_S_DIR ]; then
   git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_AUTO_S_DIR
 fi
 
+echo "Pwd is: " $(pwd)
+file .zshrc
+
 cp .zshrc ~
 cp .p10k.zsh ~
 
