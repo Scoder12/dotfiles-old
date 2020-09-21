@@ -164,7 +164,7 @@ fi
 [[ ! -d ~/.local/bin ]] || export PATH="$HOME/.local/bin:$PATH"
 
 # Ruby tools
-[[ ! -d ~/.gem/ruby/2.7.0/bin ]] || export PATH="$HOME/.gem/ruby/2.7.0/bin"
+[[ ! -d ~/.gem/ruby/2.7.0/bin ]] || export PATH="$HOME/.gem/ruby/2.7.0/bin:$PATH"
 
 # Scripts
 [[ ! -d ~/scripts ]] || export PATH="$HOME/scripts:$PATH"
