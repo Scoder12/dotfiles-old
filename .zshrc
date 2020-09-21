@@ -79,6 +79,9 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git gh python zsh-autosuggestions)
 
+# gh plugin only works if I run this here...
+compdef _gh gh
+
 [[ ! -f $ZSH/oh-my-zsh.sh ]] || source $ZSH/oh-my-zsh.sh
 
 # User configuration
