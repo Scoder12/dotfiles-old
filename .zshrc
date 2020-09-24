@@ -77,7 +77,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gh python zsh-autosuggestions)
+plugins=(git gh python zsh-autosuggestions colored-man-pages)
 
 # gh plugin only works if I run this here...
 compdef _gh gh
@@ -203,6 +203,13 @@ alias gp="git push"
 alias gd="git diff HEAD --"
 
 # Functions
+
+cl () {
+  # Show the amount of commits in repo
+  # e.g. cl # all branches
+  # cl master # just master
+  git rev-list --count ${1:-'--all'}
+}
 
 mkcd () {
   mkdir -p "$1"
