@@ -112,8 +112,13 @@ export LC_ALL='en_US.UTF-8';
 # Highlight section titles in manual pages.
 export LESS_TERMCAP_md="${yellow}";
 
-# Don’t clear the screen after quitting a manual page.
-export MANPAGER='less -X';
+if [ ! $(command -v batcat) ]; then
+  # We don't have batcat, use less for manpages.
+  # Don’t clear the screen after quitting a manual page.
+  export MANPAGER='less -X';
+else
+  export MANPAGER="sh -c 'col -bx | batcat -l man -p'"
+fi
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -182,6 +187,7 @@ STDERRED_SO='/opt/stderred/lib64/libstderred.so'
 
 # Misc
 alias lsa="ls -a"
+alias bat="batcat"
 # For when my headphones don't work, I run this command a few times until it says
 #  "Terminating process". Once it says that, the headphones start working. Weird.
 alias afr="sudo alsa force-reload"
