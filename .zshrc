@@ -177,6 +177,9 @@ fi
 # Scripts
 [[ ! -d ~/scripts ]] || export PATH="$HOME/scripts:$PATH"
 
+# processing
+[[ ! -d /opt/processing-3.5.4/ ]] || export PATH="/opt/processing-3.5.4:$PATH"
+
 # stderred
 STDERRED_SO='/opt/stderred/lib64/libstderred.so'
 [[ ! -f $STDERRED_SO ]] || export LD_PRELOAD="$STDERRED_SO${LD_PRELOAD:+:$LD_PRELOAD}"
