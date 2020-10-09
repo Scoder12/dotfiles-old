@@ -327,3 +327,6 @@ whennet () {
     sleep 3
   done
 }
+
+# Use RUN variable for running commands on startup
+eval "$RUN"
