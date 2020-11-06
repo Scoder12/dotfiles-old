@@ -77,7 +77,8 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git gh python zsh-autosuggestions colored-man-pages)
+# NOTE: zsh-syntax-highlighting must be last so it can properly hook zle.
+plugins=(git gh python zsh-autosuggestions colored-man-pages zsh-syntax-highlighting)
 
 # gh plugin only works if I run this here...
 compdef _gh gh
@@ -327,6 +328,3 @@ whennet () {
     sleep 3
   done
 }
-
-# Use RUN variable for running commands on startup
-eval "$RUN"
