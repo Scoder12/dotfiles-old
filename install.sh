@@ -8,6 +8,7 @@ set -e # Fail fast
 OH_MY_ZSH_DIR=~/.oh-my-zsh # codespaces already has this installed, nice!
 P10K_DIR=$OH_MY_ZSH_DIR/themes/powerlevel10k
 ZSH_AUTO_S_DIR=$OH_MY_ZSH_DIR/plugins/zsh-autosuggestions
+ZSH_HIGHLIGHT_DIR=$OH_MY_ZSH_DIR/custom/plugins/zsh-syntax-highlighting
 
 # Download ZSH
 # if [ ! -d $ZSH_DIR ]; then
@@ -31,7 +32,12 @@ fi
 
 # Download zsh-autosuggestions
 if [ ! -d $ZSH_AUTO_S_DIR ]; then
-  git clone https://github.com/zsh-users/zsh-autosuggestions $ZSH_AUTO_S_DIR
+  git clone https://github.com/zsh-users/zsh-autosuggestions.git $ZSH_AUTO_S_DIR
+fi
+
+# Download zsh-syntax-highlighting
+if [ ! -d $ZSH_HIGHLIGHT_DIR ]; then
+  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $ZSH_HIGHLIGHT_DIR
 fi
 
 # cp .zshrc ~
